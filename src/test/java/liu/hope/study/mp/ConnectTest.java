@@ -1,5 +1,6 @@
 package liu.hope.study.mp;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -13,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
@@ -79,6 +82,19 @@ public class ConnectTest {
         System.out.println(("----- insertOne method test ------"));
         Assert.assertEquals(1, userMapper.insert(user));
         System.out.println(user.getId());
+    }
+
+    @Test
+    public void mapKeyTest() {
+        System.out.println(("----- getUserList method test ------"));
+        Map<Long, User> userList = userMapper.getUserList();
+//        Assert.assertEquals(5, userList.size());
+        userList.forEach((k, v) -> System.out.println(k + "," + v));
+
+        System.out.println(("----- getUser method test ------"));
+        Map<String, User> user = userMapper.getUser(Wrappers.<User>lambdaQuery().eq(User::getId, "1"));
+//        Assert.assertEquals(1, userList.size());
+        System.out.println(user);
     }
 
 }

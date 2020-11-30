@@ -15,5 +15,7 @@ public class OptionalTest {
         Optional.ofNullable(null);
         Optional.ofNullable(user).map(User::getName).ifPresent(System.out::println);
         Optional.ofNullable(user).map(User::getEmail).ifPresent(System.out::println);
+        String ss = Optional.ofNullable(new User()).map(User::getName).orElse("123");
+        System.out.println(ss);
     }
 }
