@@ -1,0 +1,16 @@
+package liu.hope.study.graph;
+
+/**
+ * 顶点类
+ *
+ * @author lglhope
+ */
+public class Vertex {
+    public char label;
+    public boolean wasVisited;
+
+    public Vertex(char label) {
+        this.label = label;
+        wasVisited = false;
+    }
+}
