@@ -7,6 +7,14 @@ spring:
   elasticsearch:
     rest:
       uris: http://localhost:9200
+#
+#      elasticsearch:
+#        rest:
+#          uris: 192.168.10.149:9200
+#          username: elastic
+#          password: 5y8fzjhd78tqff37
+#          geo:
+#            distance: 50000
 
 
 
