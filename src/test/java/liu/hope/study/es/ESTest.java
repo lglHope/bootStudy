@@ -17,10 +17,10 @@ import java.util.List;
 @SpringBootTest
 public class ESTest {
 
-    @Autowired
+//    @Autowired
     ElasticsearchRestTemplate elasticsearchRestTemplate;
 
-    @Autowired
+//    @Autowired
     IUserRepository iUserRepository;
 
     private static final char[] CHARS = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v'};
